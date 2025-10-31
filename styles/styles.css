@@ -526,3 +526,156 @@ footer .list-unstyled a:hover {
   }
 }
 
+/* --- Testimonials Section --- */
+#testimonials {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 60px 0;
+    text-align: center;
+    overflow-x: hidden; /* Prevents horizontal scrollbar */
+}
+
+#testimonials h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 40px;
+}
+
+/* This wrapper holds the slider and positions the arrows */
+.testimonials-wrapper {
+    position: relative;
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 0 50px; /* Creates space for the nav arrows */
+}
+
+/* This container hides the slides that are off-screen */
+.testimonials-container {
+    overflow: hidden;
+}
+
+/* This track holds all slides and moves left/right */
+.testimonials-track {
+    display: flex; /* Lines up slides in a row */
+    transition: transform 0.5s ease-in-out; /* The slide animation! */
+}
+
+/* Each individual slide */
+.testimonial-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* The card styling */
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    text-align: left;
+    min-height: 320px; /* Gives all cards a uniform height */
+}
+
+.testimonial-card .quote-icon {
+    font-size: 2rem;
+    color: #0d6efd; /* Bootstrap primary blue */
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #eee;
+    object-fit: cover; /* Ensures image isn't stretched */
+}
+
+.testimonial-author h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #000;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.rating {
+    color: #ffc107; /* Bootstrap warning/star yellow */
+    margin-top: 15px;
+}
+
+/* --- Slider Navigation Arrows --- */
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.testimonial-nav:hover {
+    background-color: #0d6efd; /* Bootstrap primary blue */
+    color: #fff;
+}
+
+.testimonial-nav.prev { left: 0; }
+.testimonial-nav.next { right: 0; }
+
+/* --- Slider Dots --- */
+.testimonial-dots {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dot.active {
+    background: #0d6efd; /* Bootstrap primary blue */
+}
+
+
+.testimonial-nav i {
+    color: black !important; /* Force the icon to be black */
+    font-size: 20px !important; /* Make it nice and big */
+}
