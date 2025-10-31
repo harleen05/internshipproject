@@ -1,0 +1,320 @@
+/* ----------- HEADER BASE ----------- */
+header {
+  background: linear-gradient(135deg, #B95E82, #F39F9F);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  color: #fff;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 18px rgba(185, 94, 130, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ----------- LOGO & BRAND NAME ----------- */
+header .fs-4 {
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #FFECC0;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+header a.link-body-emphasis {
+  color: #FFECC0 !important;
+}
+
+header a.link-body-emphasis:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: #FFC29B !important;
+}
+
+/* ----------- NAV LINKS ----------- */
+.nav-pills .nav-link {
+  color: #FFECC0 !important;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 0.6rem 1.3rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-pills .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(243, 159, 159, 0.4);
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #F39F9F, #FFC29B);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(243, 159, 159, 0.45);
+}
+
+/* ----------- STICKY GLASS EFFECT ----------- */
+header.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background: rgba(185, 94, 130, 0.85);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 768px) {
+  header {
+    border-radius: 0;
+    text-align: center;
+  }
+
+  header .nav-pills {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  header .nav-link {
+    font-size: 0.95rem;
+  }
+
+  header .fs-4 {
+    font-size: 1.4rem;
+  }
+}
+
+.card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(185, 94, 130, 0.25);
+}
+
+.card-img-top {
+  height: 230px;
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: #fff8fa;
+  padding: 1.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #5a5a5a;
+}
+
+.btn-outline-secondary {
+  color: #b95e82;
+  border-color: #b95e82;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #b95e82;
+  color: #fff;
+}
+
+.text-body-secondary {
+  color: #b95e82 !important;
+}
+
+.suggest-resource-section {
+  background-color: #fff6f6;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: 700;
+  color: #e56b6f;
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #f3b6b6;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f28585;
+  box-shadow: 0 0 5px rgba(242, 133, 133, 0.3);
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  background-color: #f28585;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #f8bfbf;
+  color: #333;
+}
+
+.suggest-resource-section {
+  background-color: #fff6f6;
+  padding: 60px 40px; /* added horizontal padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 50px 60px; /* increased inner side padding */
+  width: 100%;
+  max-width: 800px; /* previously 600px */
+}
+
+/* Make sure it stays beautiful on smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px 25px;
+    max-width: 95%;
+  }
+}
+
+
+/* footer */
+footer {
+  background-color: #F39F9F; /* same as cards background */
+  color: #fff;
+  padding: 4rem 2rem;
+  /* border-top-left-radius: 40px;
+  border-top-right-radius: 40px; */
+}
+
+/* Section Headings */
+footer h5 {
+  font-weight: 700;
+  color: #FFECC0;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+footer a.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a.nav-link:hover {
+  color: #FFECC0;
+}
+
+/* Newsletter Input */
+footer input.form-control {
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+footer input.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 236, 192, 0.8);
+}
+
+/* Subscribe Button */
+footer .btn-primary {
+  background: #B95E82;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+footer .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Divider and Bottom Row */
+footer .border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+/* Social Icons */
+footer .list-unstyled a {
+  color: #FFECC0;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+  footer .row.container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

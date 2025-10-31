@@ -1,0 +1,528 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section,
+section:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+.navbar.bg-light {
+  background: linear-gradient(90deg, #B95E82, #F39F9F) !important;
+  box-shadow: none !important;
+}
+
+header::before {
+  content: none !important;
+}
+
+
+/* ----------- HEADER BASE ----------- */
+header {
+  background: linear-gradient(135deg, #B95E82, #F39F9F);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  color: #fff;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 18px rgba(185, 94, 130, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ----------- LOGO & BRAND NAME ----------- */
+header .fs-4 {
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #FFECC0;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+header a.link-body-emphasis {
+  color: #FFECC0 !important;
+}
+
+header a.link-body-emphasis:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: #FFC29B !important;
+}
+
+/* ----------- NAV LINKS ----------- */
+.nav-pills .nav-link {
+  color: #FFECC0 !important;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 0.6rem 1.3rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-pills .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(243, 159, 159, 0.4);
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #F39F9F, #FFC29B);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(243, 159, 159, 0.45);
+}
+
+/* ----------- STICKY GLASS EFFECT ----------- */
+header.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background: rgba(185, 94, 130, 0.85);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 768px) {
+  header {
+    border-radius: 0;
+    text-align: center;
+  }
+
+  header .nav-pills {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  header .nav-link {
+    font-size: 0.95rem;
+  }
+
+  header .fs-4 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========== HERO SECTION ========== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✨ Floating Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(15deg); }
+  50% { transform: translateY(-15px) rotate(15deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(15px) rotate(-10deg); }
+}
+
+/* 💫 Hero Section */
+.position-relative {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #B95E82, #F39F9F, #FFC29B, #FFECC0);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  /* padding: 5rem 1rem; */
+}
+
+/* Hero Title */
+.position-relative h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #fff, #FFECC0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  transform: rotate(-1deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hero Subtitle */
+.position-relative h3 {
+  color: #FFECC0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+/* CTA Button */
+.icon-link {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  color: #fff !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.icon-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+
+/* Floating Shapes */
+.product-device,
+.product-device-2 {
+  position: absolute;
+  border-radius: 30px;
+  width: 260px;
+  height: 520px;
+  background: linear-gradient(145deg, rgba(255, 236, 192, 0.15), rgba(255, 194, 155, 0.1));
+  z-index: 1;
+}
+
+.product-device {
+  top: -60px;
+  right: -100px;
+  transform: rotate(15deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+.product-device-2 {
+  bottom: -80px;
+  left: -80px;
+  transform: rotate(-10deg);
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* 📱 Hero Responsiveness */
+@media (max-width: 768px) {
+  .position-relative {
+    border-radius: 0 0 40px 40px;
+    padding: 3rem 1rem;
+  }
+
+  .position-relative h1 {
+    font-size: 2.5rem;
+    transform: none;
+  }
+
+  .product-device,
+  .product-device-2 {
+    display: none;
+  }
+}
+
+section.py-5.bg-light.text-center {
+  background-color:  #F39F9F; /* same as #hanging-icons section */
+  color: #fff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+/* Heading */
+section.py-5.bg-light.text-center h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+section.py-5.bg-light.text-center h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #FFECC0;
+  margin: 10px auto 0;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+/* ✨ Impact Cards */
+section.py-5.bg-light.text-center .card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease;
+}
+
+section.py-5.bg-light.text-center .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(185, 94, 130, 0.35);
+}
+
+/* Counter Numbers */
+.counter {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #FFECC0, #FFC29B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Labels */
+section.py-5.bg-light.text-center p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+/* Grid Layout */
+section.py-5.bg-light.text-center .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+section.py-5.bg-light.text-center .col-6.col-md-3 {
+  flex: 1 1 220px;
+  max-width: 250px;
+}
+
+/* Font Consistency */
+section.py-5.bg-light.text-center h2,
+section.py-5.bg-light.text-center h3,
+section.py-5.bg-light.text-center p {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  section.py-5.bg-light.text-center .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.py-5.bg-light.text-center .col-6.col-md-3 {
+    width: 85%;
+  }
+
+  .counter {
+    font-size: 2.3rem;
+  }
+}
+
+
+section.py-5.bg-light.text-center,
+#hanging-icons {
+  background-color: #F39F9F; /* same color for both sections */
+  color: #fff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+/* Remove underline under “See How Far You Can Upstride” */
+#hanging-icons h2::after {
+  content: none;
+}
+
+/* Heading Styling */
+#hanging-icons h2,
+section.py-5.bg-light.text-center h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Cards layout fix — better spacing and responsiveness */
+#hanging-icons .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem; /* increased spacing between cards */
+}
+
+/* Individual Cards */
+#hanging-icons .col {
+  flex: 1 1 350px;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.35s ease;
+}
+
+#hanging-icons .col:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(185, 94, 130, 0.35);
+}
+
+/* Icon Styling */
+.icon-square {
+  background: linear-gradient(135deg, #B95E82, #F39F9F);
+  border-radius: 15px;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 15px rgba(185, 94, 130, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.col:hover .icon-square {
+  transform: scale(1.1);
+}
+
+/* Card Text */
+#hanging-icons h3 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+#hanging-icons p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Buttons */
+#hanging-icons .btn-primary {
+  background: #B95E82;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7rem 1.6rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(185, 94, 130, 0.3);
+}
+
+#hanging-icons .btn-primary:hover {
+  background: linear-gradient(135deg, #FFC29B, #FFECC0);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(185, 94, 130, 0.4);
+}
+
+/* 📱 Mobile Friendly */
+@media (max-width: 768px) {
+  #hanging-icons .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #hanging-icons .col {
+    width: 90%;
+  }
+}
+
+
+/* footer */
+footer {
+  background-color: #F39F9F; /* same as cards background */
+  color: #fff;
+  padding: 4rem 2rem;
+}
+
+/* Section Headings */
+footer h5 {
+  font-weight: 700;
+  color: #FFECC0;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+footer a.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a.nav-link:hover {
+  color: #FFECC0;
+}
+
+/* Newsletter Input */
+footer input.form-control {
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+footer input.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 236, 192, 0.8);
+}
+
+/* Subscribe Button */
+footer .btn-primary {
+  background: #B95E82;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+footer .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Divider and Bottom Row */
+footer .border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+/* Social Icons */
+footer .list-unstyled a {
+  color: #FFECC0;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+  footer .row.container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

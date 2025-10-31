@@ -1,0 +1,331 @@
+/* ----------- HEADER BASE ----------- */
+header {
+  background: linear-gradient(135deg, #B95E82, #F39F9F);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  color: #fff;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 18px rgba(185, 94, 130, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* ----------- LOGO & BRAND NAME ----------- */
+header .fs-4 {
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #FFECC0;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+
+header a.link-body-emphasis {
+  color: #FFECC0 !important;
+}
+
+header a.link-body-emphasis:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: #FFC29B !important;
+}
+
+/* ----------- NAV LINKS ----------- */
+.nav-pills .nav-link {
+  color: #FFECC0 !important;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 0.6rem 1.3rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav-pills .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(243, 159, 159, 0.4);
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #F39F9F, #FFC29B);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(243, 159, 159, 0.45);
+}
+
+/* ----------- STICKY GLASS EFFECT ----------- */
+header.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background: rgba(185, 94, 130, 0.85);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 768px) {
+  header {
+    border-radius: 0;
+    text-align: center;
+  }
+
+  header .nav-pills {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  header .nav-link {
+    font-size: 0.95rem;
+  }
+
+  header .fs-4 {
+    font-size: 1.4rem;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  background: #FFECC0; /* dark backdrop for contrast */
+  padding: 60px 20px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* FAQ Card Style */
+.faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item:hover {
+  border-color: #ff7ba5;
+  box-shadow: 0 0 15px rgba(255, 123, 165, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Question Button */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #ff7ba5;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 24px;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+  color: #ff7ba5;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(45deg);
+}
+
+/* Answer Section */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: black;
+  padding: 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 24px 20px;
+}
+
+/* contact us */
+/* Contact Section */
+.contact-section {
+  background: #FFECC0;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #ff7ba5;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255, 123, 165, 0.5);
+}
+
+/* Button */
+.contact-btn {
+  background: #ff7ba5;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #ff5288;
+  box-shadow: 0 0 10px rgba(255, 123, 165, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* footer */
+footer {
+  background-color: #F39F9F; /* same as cards background */
+  color: #fff;
+  padding: 4rem 2rem;
+  /* border-top-left-radius: 40px;
+  border-top-right-radius: 40px; */
+}
+
+/* Section Headings */
+footer h5 {
+  font-weight: 700;
+  color: #FFECC0;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+footer a.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a.nav-link:hover {
+  color: #FFECC0;
+}
+
+/* Newsletter Input */
+footer input.form-control {
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+footer input.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 236, 192, 0.8);
+}
+
+/* Subscribe Button */
+footer .btn-primary {
+  background: #B95E82;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+footer .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Divider and Bottom Row */
+footer .border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+/* Social Icons */
+footer .list-unstyled a {
+  color: #FFECC0;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+  footer .row.container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
