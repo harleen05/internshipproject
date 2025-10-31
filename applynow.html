@@ -98,7 +98,7 @@
 <section class="mentee-form-section">
   <div class="form-container">
 
-    <form class="mentee-form" action="#" method="post" enctype="multipart/form-data">
+    <form class="mentee-form" action="#" method="post" enctype="multipart/form-data" name="submit-to-google-sheet">
       <div class="form-group">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -130,11 +130,6 @@
           <option value="dsa">Data Structures & Algorithms</option>
           <option value="devops">DevOps</option>
         </select>
-      </div>
-
-      <div class="form-group">
-        <label for="pdf">Upload Resume / Portfolio (PDF only)</label>
-        <input type="file" id="pdf" name="pdf" accept=".pdf" required>
       </div>
 
       <div class="form-group">
@@ -225,5 +220,16 @@
   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxT_6qbT5jV7T1mFvrNvl--fRRGddj-2IilT45ysjhWdaGkJbPWm_4yG980VdOytlVyUw/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
     
