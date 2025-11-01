@@ -364,7 +364,6 @@ header a.link-body-emphasis:hover {
 .nav-pills .nav-link {
   color: #FFECC0 !important;
   font-weight: 500;
-  border-radius: 25px;
   padding: 0.6rem 1.3rem;
   transition: all 0.3s ease-in-out;
   position: relative;
