@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities</title>
+  <link rel="icon" href="icons/logo/upstride_logo.png" type="image/png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/opportunities.css">
+  <link rel="stylesheet" href="styles/cohorts.css">
+  
+    
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="d-flex flex-wrap justify-content-center py-3">
+  <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
+    <a href="hiddencorner.html" class="logo-link">
+      <img src="icons/logo/upstride_logo.png" alt="Upstride Logo" class="logo">
+    </a>
+    <span class="fs-4">UpStride</span>
+  </div>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+    <li class="nav-item"><a href="cohorts.html" class="nav-link">Our Cohorts</a></li>
+    <li class="nav-item"><a href="opportunities.html" class="nav-link active">Opportunities</a></li>
+    <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+    <li class="nav-item"><a href="faqs.html" class="nav-link">FAQs</a></li>
+    <li class="nav-item"><a href="aboutus.html" class="nav-link">About</a></li>
+  </ul>
+</header>
+    <!-- Hero Section -->
+    <div class="px-4 py-5 my-5 text-center"> 
+        <h1 class="display-5 fw-bold text-body-emphasis">Opportunities</h1> 
+        <div class="col-lg-6 mx-auto"> 
+            <p class="lead mb-4">Unlock your next step in tech. Explore curated opportunities tailored to your year and career aspirations. Apply strategically, grow exponentially.</p> 
+        </div> 
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <!-- Wrap search box and button in flex container -->
+      <div class="search-bar-wrapper">
+        <input type="text" id="searchBox" class="search-box" placeholder="🔍 Search by company or program name...">
+        <button class="btn-track-progress" onclick="window.location.href='progresstracker.html'"> Track your progress</button>
+      </div>
+    </div>
+
+    <!-- Year Tabs -->
+    <div class="container">
+      <div class="year-tabs">
+        <button class="year-tab active" data-year="2nd">2nd Year</button>
+        <button class="year-tab" data-year="3rd">3rd Year</button>
+        <button class="year-tab" data-year="4th">4th Year</button>
+      </div>
+
+      <!-- Opportunities List -->
+      <div id="opportunitiesContainer" class="container">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <!-- Tips & Timeline Section -->
+    <div class="container tips-section">
+      <h2 class="section-title">Tips & Resources</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h5>📋 Resume Building</h5>
+          <p>Craft a resume that stands out. Highlight projects, leadership roles, and quantifiable achievements. Keep it concise and impactful.</p>
+        </div>
+        <div class="tip-card">
+          <h5>💻 Online Assessment Tips</h5>
+          <p>Practice coding problems on LeetCode and GeeksforGeeks. Focus on DSA fundamentals. Time management is crucial during assessments.</p>
+        </div>
+        <div class="tip-card">
+          <h5>🗣️ Interview Readiness</h5>
+          <p>Prepare behavioral and technical questions. Practice mock interviews. Research the company thoroughly before your interview.</p>
+        </div>
+        <div class="tip-card">
+          <h5>📅 Application Timeline</h5>
+          <p>Most opportunities open in January-February for internships. Plan ahead, set reminders, and apply early for better chances.</p>
+        </div>
+        <div class="tip-card">
+          <h5>🎯 Strategic Approach</h5>
+          <p>Apply to a mix of dream, target, and safety companies. Customize your approach for internship vs. full-time roles.</p>
+        </div>
+        <div class="tip-card">
+          <h5>🤝 Networking Power</h5>
+          <p>Connect with mentors and alumni. Follow companies on LinkedIn. Referrals can significantly boost your application chances.</p>
+        </div>
+        <div class="tip-card">
+  <h5>🧠 Skill Development</h5>
+  <p>Strengthen core skills like problem-solving, system design, and version control. Consistent learning through small daily goals leads to steady growth.</p>
+</div>
+
+<div class="tip-card">
+  <h5>🌐 Personal Branding</h5>
+  <p>Maintain an updated LinkedIn and GitHub profile. Showcase projects, open-source contributions, and achievements to stand out to recruiters.</p>
+</div>
+
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modal-body">
+          <!-- Content dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5"> 
+      <div class="container">
+        <div class="row"> 
+          <div class="col-6 col-md-2 mb-3"> 
+            <h5>Explore</h5> 
+            <ul class="nav flex-column"> 
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-white">Home</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="cohorts.html" class="nav-link p-0 text-white">Our Cohorts</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="opportunities.html" class="nav-link p-0 text-white">Opportunities</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="resources.html" class="nav-link p-0 text-white">Resources</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="faqs.html" class="nav-link p-0 text-white">FAQs</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="aboutus.html" class="nav-link p-0 text-white">About</a>
+              </li> 
+            </ul> 
+          </div> 
+          <div class="col-6 col-md-2 mb-3"> 
+            <h5>Resources</h5> 
+            <ul class="nav flex-column"> 
+              <li class="nav-item mb-2">
+                <a href="aimlresources.html" class="nav-link p-0 text-white">AI/ML</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="webdevresources.html" class="nav-link p-0 text-white">Web Development</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="cloudresources.html" class="nav-link p-0 text-white">DevOps</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="uiuxresources.html" class="nav-link p-0 text-white">UI/UX</a>
+              </li> 
+              <li class="nav-item mb-2">
+                <a href="productresources.html" class="nav-link p-0 text-white">Product Management</a>
+              </li> 
+            </ul> 
+          </div> 
+          <div class="col-6 col-md-2 mb-3"> 
+            <h5>Level Up</h5> 
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="opportunities.html" class="nav-link p-0 text-white">Opportunities</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="progresstracker.html" class="nav-link p-0 text-white">Progress Tracker</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="https://klyro-resume.vercel.app/" class="nav-link p-0 text-white">Resume Reviewer</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="faqs.html" class="nav-link p-0 text-white">FAQs</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="aboutus.html" class="nav-link p-0 text-white">About Us</a>
+                </li> 
+            </ul> 
+        </div> 
+          <div class="col-md-5 offset-md-1 mb-3"> 
+            <form> <h5>Subscribe to our newsletter</h5> 
+              <p>Monthly digest of what's new and exciting from us.</p> 
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2"> 
+                <label for="newsletter1" class="visually-hidden">Email address</label> 
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address"> 
+                <button class="btn btn-primary" type="button">Subscribe</button> 
+              </div> 
+            </form> 
+          </div> 
+        </div> 
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"> 
+          <p>© 2025 UpStride, Inc. All rights reserved.</p> 
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <img src="icons/socials/instagram.svg" alt="Instagram" width="24" height="24" class="social-icon">
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <img src="icons/socials/facebook.svg" alt="Facebook" width="24" height="24" class="social-icon">
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+                <img src="icons/socials/linkedin.svg" alt="LinkedIn" width="24" height="24" class="social-icon">
+              </a>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="scripts/opportunities.js"></script>
+
+</body>
+</html>

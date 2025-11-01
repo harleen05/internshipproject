@@ -370,3 +370,10 @@ footer .list-unstyled a:hover {
     align-items: center;
   }
 }
+
+#msg{
+  color: #B95E82;
+  margin-top: 10px;
+  display: block; 
+
+}

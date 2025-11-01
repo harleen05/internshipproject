@@ -26,6 +26,7 @@
   <ul class="nav nav-pills">
     <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
     <li class="nav-item"><a href="cohorts.html" class="nav-link active">Our Cohorts</a></li>
+    <li class="nav-item"><a href="opportunities.html" class="nav-link">Opportunities</a></li>
     <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
     <li class="nav-item"><a href="faqs.html" class="nav-link">FAQs</a></li>
     <li class="nav-item"><a href="aboutus.html" class="nav-link">About</a></li>
@@ -134,7 +135,9 @@
       </div>
 
       <button type="submit" class="submit-btn">Submit Registration</button>
+      <p id="msg"></p>
     </form>
+    
   </div>
 </section>
 
@@ -181,7 +184,27 @@
                     <a href="productresources.html" class="nav-link p-0 text-white">Product Management</a>
                 </li> 
             </ul> 
-        </div> 
+        </div>
+        <div class="col-6 col-md-2 mb-3"> 
+            <h5>Level Up</h5> 
+            <ul class="nav flex-column"> 
+                <li class="nav-item mb-2">
+                    <a href="opportunities.html" class="nav-link p-0 text-white">Opportunities</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="progresstracker.html" class="nav-link p-0 text-white">Progress Tracker</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="https://klyro-resume.vercel.app/" class="nav-link p-0 text-white">Resume Reviewer</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="faqs.html" class="nav-link p-0 text-white">FAQs</a>
+                </li> 
+                <li class="nav-item mb-2">
+                    <a href="aboutus.html" class="nav-link p-0 text-white">About Us</a>
+                </li> 
+            </ul> 
+        </div>  
         <div class="col-md-5 offset-md-1 mb-3"> 
             <form> <h5>Subscribe to our newsletter</h5> 
                 <p>Monthly digest of what's new and exciting from us.</p> 
@@ -219,11 +242,18 @@
     <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxT_6qbT5jV7T1mFvrNvl--fRRGddj-2IilT45ysjhWdaGkJbPWm_4yG980VdOytlVyUw/exec'
   const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg");
 
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
+      .then(response =>{
+        msg.innerHTML="Form filled successfully!"
+        setTimeout(function(){
+          msg.innerHTML="" 
+        },5000)
+        form.reset()
+      })
       .catch(error => console.error('Error!', error.message))
   })
 </script>
