@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Crossword</title>
+<style>
+    /* Reset default browser spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+  body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #FFECC0, #FFC29B, #F39F9F, #B95E82);
+  background-size: 300% 300%;
+  animation: gradient 12s ease infinite;
+  display: flex;
+  flex-direction: column; /* stack crossword and clues vertically */
+  justify-content: flex-start; /* align from top */
+  align-items: center; /* center horizontally */
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 0; /* add breathing space */
+  padding-top: 0;
+}
+
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .crossword-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center grid vertically within container */
+}
+
+
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.15) 10px,
+      rgba(255,255,255,0.25) 10px,
+      rgba(255,255,255,0.25) 20px
+    );
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #b95e82b2;
+    text-align: center;
+    position: relative;
+    background-color: rgba(255,255,255,0.9);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  td input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+    background: transparent;
+    color: #4A1E33;
+    font-weight: 600;
+  }
+
+  td input:focus {
+    background-color: #ffe1eb;
+    box-shadow: 0 0 6px #b95e82;
+  }
+
+  td[data-empty="true"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(185, 94, 130, 0.3);
+  }
+
+  .number {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    font-size: 10px;
+    color: #B95E82;
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 15px;
+    background-color: #B95E82;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #F39F9F;
+    transform: translateY(-2px);
+  }
+
+  #result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #B95E82;
+    text-align: center;
+  }
+
+  /* === CLUES SECTION BELOW THE CROSSWORD === */
+.clues {
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto 0; /* spacing from crossword */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* even across-down layout */
+  gap: 40px; /* space between columns */
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  color: #4A1E33;
+}
+
+.clues h2 {
+  color: #B95E82;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.clues ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* even space between items */
+}
+
+.clues li {
+  background-color: #FFC29B;
+  color: #5E4633;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.6;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.clues li:hover {
+  background-color: #F39F9F;
+  transform: translateY(-3px);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 800px) {
+  .clues {
+    grid-template-columns: 1fr;
+    padding: 30px 25px;
+    gap: 25px;
+  }
+
+  .clues h2 {
+    font-size: 1.3rem;
+  }
+
+  .clues li {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* === HEADER SECTION === */
+
+/* Header */
+/* === HEADER SECTION (Fixed Spacing & Balance) === */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffe1b3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 0 25px; /* Less on top, more on bottom */
+  position: relative;
+  margin: 0 0 25px; /* Adds spacing below header */
+  border-radius: 0 0 20px 20px;
+}
+
+/* Back Button */
+header a {
+  position: absolute;
+  left: 40px;
+  background-color: #b54b70;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+header a:hover {
+  background-color: #93365b;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #3b1d29;
+  margin: 0;
+  letter-spacing: 1.2px;
+}
+
+
+
+/* === Title === */
+.crossword-header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4A1E33;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(74, 30, 51, 0.15);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .crossword-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 15px 20px;
+  }
+
+  .back-button {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  .crossword-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+    <header class="crossword-header">
+  <a href="hiddencorner.html" class="back-button">← Back</a>
+  <br><br>
+  <h1>SOLVE THE CROSSWORD</h1>
+</header>
+
+  <div class="crossword-container">
+    <table id="crossword"></table>
+    <div style="text-align:center">
+      <button onclick="checkAnswers()">Check Answers</button>
+      <p id="result"></p>
+    </div>
+  </div>
+  <br>
+
+  <div class="clues">
+    <div>
+      <h2>Across</h2>
+      <ul>
+        <li>1. The universal markup language for web pages. (4)</li>
+        <li>3. The process of repeating a sequence of instructions in code. (4)</li>
+        <li>5. A container that holds multiple, ordered values. (5)</li>
+        <li>7. The technology that styles web pages (Acronym). (3)</li>
+        <li>9. The standard language that styles web pages. (10)</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Down</h2>
+      <ul>
+        <li>2. The tool used by developers to manage code versions. (3)</li>
+        <li>4. The language used to talk to databases (Acronym). (3)</li>
+        <li>6. A programming error that causes a program to malfunction. (3)</li>
+        <li>8. Principle which stack uses (Acronym). (4)</li>
+        <li>10. The physical parts of a computer system. (8)</li>
+      </ul>
+    </div>
+
+<script>
+const gridSize = 15;
+const crossword = Array(gridSize).fill().map(() => Array(gridSize).fill(''));
+
+const words = [
+  { num: 1, dir: 'across', row: 1, col: 1, answer: 'HTML' },
+  { num: 2, dir: 'down', row: 1, col: 7, answer: 'GIT' },
+  { num: 3, dir: 'across', row: 4, col: 3, answer: 'LOOP' },
+  { num: 4, dir: 'down', row: 2, col: 3, answer: 'SQL' },
+  { num: 5, dir: 'across', row: 6, col: 4, answer: 'ARRAY' },
+  { num: 6, dir: 'down', row: 4, col: 13, answer: 'BUG' },
+  { num: 7, dir: 'across', row: 7, col: 2, answer: 'CSS' },
+  { num: 8, dir: 'down', row: 10, col: 9, answer: 'LIFO' },
+  { num: 9, dir: 'across', row: 11, col: 2, answer: 'JAVASCRIPT' },
+  { num: 10, dir: 'down', row: 1, col: 10, answer: 'HARDWARE' },
+];
+
+function generateGrid() {
+  const table = document.getElementById('crossword');
+  for (let r = 0; r < gridSize; r++) {
+    const row = document.createElement('tr');
+    for (let c = 0; c < gridSize; c++) {
+      const cell = document.createElement('td');
+      cell.dataset.empty = 'true';
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+
+  words.forEach(w => {
+    for (let i = 0; i < w.answer.length; i++) {
+      let r = w.row + (w.dir === 'down' ? i : 0);
+      let c = w.col + (w.dir === 'across' ? i : 0);
+      const cell = table.rows[r].cells[c];
+      cell.dataset.empty = 'false';
+      if (!cell.querySelector('input')) {
+        const inp = document.createElement('input');
+        inp.maxLength = 1;
+        inp.dataset.row = r;
+        inp.dataset.col = c;
+        inp.addEventListener('input', () => {
+          inp.value = inp.value.toUpperCase();
+        });
+        cell.appendChild(inp);
+      }
+      if (i === 0) {
+        const num = document.createElement('div');
+        num.className = 'number';
+        num.textContent = w.num;
+        cell.appendChild(num);
+      }
+    }
+  });
+}
+
+function moveTo(row, col) {
+  const next = document.querySelector(`input[data-row="${row}"][data-col="${col}"]`);
+  if (next) next.focus();
+}
+
+// ✅ Enable arrow key navigation between cells
+document.addEventListener('keydown', (e) => {
+  const active = document.activeElement;
+  if (active.tagName !== 'INPUT') return;
+
+  const row = +active.dataset.row;
+  const col = +active.dataset.col;
+  let handled = true;
+
+  switch (e.key) {
+    case 'ArrowUp': moveTo(row - 1, col); break;
+    case 'ArrowDown': moveTo(row + 1, col); break;
+    case 'ArrowLeft': moveTo(row, col - 1); break;
+    case 'ArrowRight': moveTo(row, col + 1); break;
+    default: handled = false;
+  }
+
+  if (handled) e.preventDefault();
+});
+
+// ✅ Auto-move to the next cell on typing a letter
+document.addEventListener('input', (e) => {
+  const active = e.target;
+  if (active.tagName !== 'INPUT') return;
+
+  const row = +active.dataset.row;
+  const col = +active.dataset.col;
+
+  if (active.value.length === 1) {
+    moveTo(row, col + 1);
+  }
+});
+
+function checkAnswers() {
+  let correct = 0;
+  words.forEach(w => {
+    let formed = '';
+    for (let i = 0; i < w.answer.length; i++) {
+      let r = w.row + (w.dir === 'down' ? i : 0);
+      let c = w.col + (w.dir === 'across' ? i : 0);
+      const val = document.querySelector(`#crossword tr:nth-child(${r + 1}) td:nth-child(${c + 1}) input`)?.value.toUpperCase() || '';
+      formed += val;
+    }
+    if (formed === w.answer) correct++;
+  });
+  document.getElementById('result').textContent = `You got ${correct} out of ${words.length} correct!`;
+}
+
+generateGrid();
+</script>
+
+</body>
+</html>
+
+
+
+

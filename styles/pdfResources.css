@@ -86,6 +86,41 @@ header.sticky {
   }
 }
 
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* ----------- LOGO LINK (ISOLATED FROM HEADER ANCHOR STYLES) ----------- */
+.logo-link {
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.logo-link:hover {
+  opacity: 1 !important;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----------- LOGO IMAGE ----------- */
+.logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+
 .card {
   border: none;
   border-radius: 16px;
