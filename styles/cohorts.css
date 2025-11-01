@@ -29,39 +29,6 @@ header a.link-body-emphasis:hover {
   text-decoration: none;
   color: #FFC29B !important;
 }
-.logo {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  object-fit: contain;
-}
-
-/* ----------- LOGO LINK (ISOLATED FROM HEADER ANCHOR STYLES) ----------- */
-.logo-link {
-  text-decoration: none;
-  pointer-events: auto;
-}
-
-.logo-link:hover {
-  opacity: 1 !important;
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ----------- LOGO IMAGE ----------- */
-.logo {
-  height: 55px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-right: 10px;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
 
 /* ----------- NAV LINKS ----------- */
 .nav-pills .nav-link {
@@ -377,4 +344,71 @@ footer .list-unstyled a:hover {
   }
 }
 
+/* --- Mentor Grid (Our Mentors) --- */
+
+.mentor-grid .mentor-card {
+  background-color: #ffc5c5;
+  border: none; /* Remove plain border */
+  border-radius: 1rem; /* Matches your .rounded-4 */
+  box-shadow: 0 4px 12px rgba(185, 94, 130, 0.15); /* Use your theme shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-grid .mentor-card:hover {
+  transform: translateY(-5px); /* Your standard hover lift */
+  box-shadow: 0 8px 24px rgba(185, 94, 130, 0.3); /* Stronger theme shadow on hover */
+}
+
+/* Image Styling */
+.mentor-img-wrapper {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* Use your theme's pink for the border */
+  border: 4px solid #F39F9F; 
+  box-shadow: 0 3px 10px rgba(185, 94, 130, 0.2); /* Subtle shadow for the image */
+}
+
+.mentor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Text Styling */
+.mentor-card .card-title {
+  /* Use your theme's dark pink */
+  color: #B95E82; 
+  font-family: 'Poppins', sans-serif; /* Match your header font */
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.mentor-card .card-text {
+  color: #555; /* A soft dark color */
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* LinkedIn Button */
+.linkedin-btn {
+  /* Use your theme's light pink */
+  color: #2e4365; 
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.linkedin-btn:hover {
+  /* Hover to your theme's dark pink */
+  color: #273552; 
+  transform: scale(1.1); /* Match your social icon hover */
+}
+
+/* Card Body */
+.mentor-card .card-body {
+  padding: 1.5rem;
+}
 
