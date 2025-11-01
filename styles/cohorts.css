@@ -30,6 +30,40 @@ header a.link-body-emphasis:hover {
   color: #FFC29B !important;
 }
 
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* ----------- LOGO LINK (ISOLATED FROM HEADER ANCHOR STYLES) ----------- */
+.logo-link {
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.logo-link:hover {
+  opacity: 1 !important;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----------- LOGO IMAGE ----------- */
+.logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
 /* ----------- NAV LINKS ----------- */
 .nav-pills .nav-link {
   color: #FFECC0 !important;
@@ -62,7 +96,6 @@ header.sticky {
   background: rgba(185, 94, 130, 0.85);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
-
 /* ----------- RESPONSIVE DESIGN ----------- */
 @media (max-width: 768px) {
   header {
